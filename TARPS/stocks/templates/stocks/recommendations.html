@@ -1,0 +1,46 @@
+{% extends 'stocks/base.html' %}
+
+{% block title %}recommended daily stocks{% endblock %}>
+
+{% block content %}
+<br>
+<h1>Recommended Daily</h1>
+<br>
+<br>
+{% if not stocks %}
+    <h2>Processing in progress...</h2>
+    <h2>Please check back later.</h1></h2>
+
+{% else %}
+
+    <div class="container">
+        <div class="row">
+            {% for stock in stocks  %}
+                <div class="col">
+                    <h5>Stock ticker: {{ stock.ticker }}</h3>
+                    <h5>Stock name: {{ stock.name }}</h3>
+                    <h5>Prediction time period: {{ stock.timeLengthName }}</h3>
+                    <h5>Prediction price: {{stock.risk}}</h3>
+                    <h5>Risk Factor: {{stock.risk}} </h5>
+                    <br>
+                    <br>
+                </div>
+                {% if forloop.counter == 2 %}
+                    <div class="w-100"></div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <p>Valid for:</p>
+    <p id="countDownTimerHTML"></p>
+
+    {% load static %}
+
+    <script type="text/javascript"> 
+        var cacheTimeLength = "{{cacheTimeLength}}";
+    </script>
+
+    <script src="{% static 'stocks/js/countDownTimer.js' %}"></script>
+{% endif %}
+{% endblock %}

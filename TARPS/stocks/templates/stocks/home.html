@@ -1,0 +1,31 @@
+{% extends 'stocks/base.html' %}
+
+{% block title %}Main Page{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  <!-- Hi {{ user.username }}! -->
+  <h1 id = "loadingText" class = "loadingText hide transparent">Loading...</h1>
+  <p class="lead">
+    <form action = "/stocks/" id = "Form" method="post">
+      <h1>Enter a stock ticker &</h1>
+      <h1>prediction interval:</h1>
+      <br>
+      {% csrf_token %}
+      {{ form }}
+      <input type = "submit" value = "Submit">
+      {% if formNotificationExist %}
+        <br>
+        <br>
+        <div class="alert alert-warning" role="alert">
+          {{ formNotification }}
+        </div>
+      {% endif %}
+    </form>
+</p>
+{% else %}
+  <h2>You are not logged in</h2>
+  <a href="{% url 'login' %}"><button >Log In</button></a>
+{% endif %}
+{% endblock %}
+

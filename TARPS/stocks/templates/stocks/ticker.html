@@ -1,0 +1,24 @@
+{% extends 'stocks/base.html' %}
+
+{% block title %}Ticker{% endblock %}>
+
+{% block content %}
+
+        <h1>Stock ticker: {{ticker}}</h1>
+        <h1>Stock name: {{name}}</h1>
+        <h1>Prediction time period: {{timeLengthName}}</h1>
+        <h1>Prediction price: {{prediction}}</h1>
+        <h1>Risk Factor: {{risk}}</h1>
+        <br>
+        <p>Valid for:</p>
+        <p id="countDownTimerHTML"></p>
+
+        {% load static %}
+
+        <script type="text/javascript"> 
+                var cacheTimeLength = "{{cacheTimeLength}}";
+        </script>
+
+        <script src="{% static 'stocks/js/countDownTimer.js' %}"></script>
+
+{% endblock %}
