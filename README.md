@@ -20,7 +20,7 @@ Libraries:
     • Numpy
     • Pandas
     • Matplotlib (for testing)
-    • Django
+    • Django (Framework)
     • Scikit-learn
     • Bootstrap (for styling)
 
