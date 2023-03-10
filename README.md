@@ -1,7 +1,7 @@
 # TARPS - PUBLIC VERSION (STOCK AI MODEL HAS BEEN REDACTED - CONTACT THE REPOSITRY OWNER FOR ACCESS)
 TARPS (TARPS - Trend Analysis Recogniser Prediction System) is an AI system which can aid traders to make the most out of historical financial data to be able to predict more accurately the best trades to make. This will try and reduce (not eradicate) the problem of uncertainty which effects traders trading in the stock market.
 
-A full fledged 70 page report of the system can be requested.
+A fully fledged 70 page report of the system can be requested.
 
 -----
 
